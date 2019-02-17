@@ -21,5 +21,7 @@ export default {
 <style lang="scss" scoped>
 .container-fluid {
   background: #000000;
+  height: 100%;
+  min-height: 100vh;
 }
 </style>
