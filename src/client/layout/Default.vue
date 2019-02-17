@@ -1,25 +1,25 @@
 <template>
   <div class="container-fluid">
     <lf-header></lf-header>
-    <router-view />
+    <router-view/>
     <lf-footer></lf-footer>
   </div>
 </template>
 
 <script>
-import LfHeader from '@/layout/components/Header.vue'
-import LfFooter from '@/layout/components/Footer.vue'
+import LfHeader from "@/layout/components/Header.vue";
+import LfFooter from "@/layout/components/Footer.vue";
 
 export default {
   components: {
     LfHeader,
     LfFooter
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  .container-fluid {
-    background: #000000;
-  }
+.container-fluid {
+  background: #000000;
+}
 </style>
