@@ -8,7 +8,11 @@ const moviesStore = {
     popular: []
   },
   getters: {
-
+    recomendedMovie(state) {
+      if (state.nowPlaying.length === 0) return '';
+      const index = Math.floor((Math.random() * state.nowPlaying.length) + 1);
+      return state.nowPlaying[index];
+    }
   },
   mutations: {
     setNowPlaying(state, movies) {
