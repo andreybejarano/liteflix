@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="white--text">
     <p>footer</p>
   </footer>
 </template>
