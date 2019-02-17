@@ -1,6 +1,6 @@
 <template>
   <header>
-    <v-toolbar color="transparent" dark>
+    <v-toolbar color="transparent" dark fixed>
       <v-toolbar-title>
         <img src="/static/img/liteflix.svg" alt>
       </v-toolbar-title>
