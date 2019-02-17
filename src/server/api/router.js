@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.json({});
-});
+const routerMovies = require('./movies/router');
+
+router.use('/movies', routerMovies);
 
 module.exports = router;
