@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-fluid">
     <lf-header></lf-header>
     <router-view />
     <lf-footer></lf-footer>
@@ -17,3 +17,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .container-fluid {
+    background: #000000;
+  }
+</style>
