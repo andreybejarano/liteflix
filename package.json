@@ -14,7 +14,9 @@
     "start:dev": "nodemon --inspect=0.0.0.0:5820 src/server/index.js"
   },
   "nodemonConfig": {
-    "ignore": ["node_module/*"]
+    "ignore": [
+      "node_module/*"
+    ]
   },
   "dependencies": {
     "dotenv": "^6.2.0",
@@ -31,6 +33,8 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-2": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",

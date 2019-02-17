@@ -2,12 +2,14 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 
+require('babel-polyfill');
+
 const baseWebpackConfig = require('./webpack.client.config');
 
 const webpackConfig = merge(baseWebpackConfig, {
   target: 'node',
   entry: {
-    app: './src/client/entry-server.js'
+    app: ['babel-polyfill', './src/client/entry-server.js']
   },
   devtool: false,
   output: {

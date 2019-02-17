@@ -2,10 +2,11 @@ const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+require('babel-polyfill');
 
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
-  entry: './src/client/entry-client.js',
+  entry: ['babel-polyfill', './src/client/entry-client.js'],
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
