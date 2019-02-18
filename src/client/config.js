@@ -1,3 +1,3 @@
 export default {
-  urlAssets: 'http://image.tmdb.org/t/p/original'
+  urlAssets: 'https://image.tmdb.org/t/p'
 };
