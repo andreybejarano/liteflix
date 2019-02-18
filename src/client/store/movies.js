@@ -5,7 +5,8 @@ const moviesStore = {
     nowPlaying: [],
     upcoming: [],
     topRated: [],
-    popular: []
+    popular: [],
+    localMovies: []
   },
   getters: {
     recomendedMovie(state) {
@@ -15,6 +16,9 @@ const moviesStore = {
     }
   },
   mutations: {
+    setLocalMovies(state, movies) {
+      state.localMovies.push(movies);
+    },
     setNowPlaying(state, movies) {
       state.nowPlaying = movies;
     },
@@ -29,6 +33,9 @@ const moviesStore = {
     }
   },
   actions: {
+    saveMovie(context, payload) {
+      context.commit('setLocalMovies', payload);
+    },
     async getNowPlaying(context, payload) {
       const movies = await MoviesService.getNowPlaying();
       context.commit('setNowPlaying', movies.results);
