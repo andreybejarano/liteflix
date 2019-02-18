@@ -10,9 +10,11 @@
         <v-btn flat>Peliculas</v-btn>
         <v-btn flat>Agregados recientemente</v-btn>
         <v-btn flat>Mi lista</v-btn>
-        <v-btn fab dark color="red">
-          <v-icon dark>add</v-icon>
-        </v-btn>
+        <router-link :to="{ name: 'createMovie' }">
+          <v-btn fab dark color="red">
+            <v-icon dark>add</v-icon>
+          </v-btn>
+        </router-link>
       </v-toolbar-items>
       <v-text-field
         hide-details
@@ -36,3 +38,9 @@
     </v-toolbar>
   </header>
 </template>
+
+<style lang="scss" scoped>
+  a {
+    text-decoration: none;
+  }
+</style>

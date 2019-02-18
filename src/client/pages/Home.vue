@@ -1,19 +1,19 @@
 <template>
-  <div class="white--text">
+  <v-layout row wrap justify-center class="white--text">
     <lf-recomended-movie :movie="recomendedMovie"></lf-recomended-movie>
-    <div class="upcomming">
+    <div v-if="nowPlaying.length !== 0" class="upcomming">
       <h2>Próximamente</h2>
-      <lf-carousel-movies v-if="nowPlaying.length!==0" :movies="upcoming"></lf-carousel-movies>
+      <lf-carousel-movies :movies="upcoming"></lf-carousel-movies>
     </div>
-    <div class="top-rated">
+    <div v-if="topRated.length !==0 " class="top-rated">
       <h2>Mejores ranqueadas</h2>
-      <lf-carousel-movies v-if="topRated.length!==0" :movies="topRated"></lf-carousel-movies>
+      <lf-carousel-movies :movies="topRated"></lf-carousel-movies>
     </div>
-    <div class="popular">
+    <div v-if="popular.length !== 0" class="popular">
       <h1>POPULARES DE LITEFLIX</h1>
-      <lf-carousel-movies v-if="popular.length!==0" :movies="popular"></lf-carousel-movies>
+      <lf-carousel-movies :movies="popular"></lf-carousel-movies>
     </div>
-  </div>
+  </v-layout>
 </template>
 
 <script>
@@ -37,3 +37,11 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+  .upcomming {
+    position: relative;
+    transform: translatey(-50%);
+  }
+</style>
+
