@@ -1,5 +1,5 @@
 <template>
-  <v-img v-if="movie.backdrop_path" :src="getUrlImg()" width="300px" height="200px">
+  <v-img v-if="movie.backdrop_path" :src="getUrlImg()" width="230px" height="150px">
 
   </v-img>
 </template>
@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     getUrlImg() {
-      return `${config.urlAssets}${this.movie.backdrop_path}`;
+      return `${config.urlAssets}/w500${this.movie.backdrop_path}`;
     }
   }
 }

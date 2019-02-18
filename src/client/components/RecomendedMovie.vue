@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     getUrlImg() {
-      return `${config.urlAssets}${this.movie.backdrop_path}`;
+      return `${config.urlAssets}/original${this.movie.backdrop_path}`;
     }
   }
 };
