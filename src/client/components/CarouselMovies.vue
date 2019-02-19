@@ -15,7 +15,7 @@ export default {
     }
   },
   props: {
-    movies: []
+    movies: undefined
   },
   created() {
     this.moviesToshow = this.movies.filter((movie, index) => index < 5)
