@@ -15,8 +15,13 @@ const moviesStore = {
     }
   },
   mutations: {
-    setLocalMovies(state, movies) {
-      state.localMovies.push(movies);
+    setLocalMovies(state, movie) {
+      let localMovies = JSON.parse(localStorage.getItem('localMovies')) || { results: [] };
+      if (movie) {
+        localMovies.results.push(movie);
+      }
+      localStorage.setItem('localMovies', JSON.stringify(localMovies));
+      state.localMovies = localMovies.results;
     },
     setNowPlaying(state, movies) {
       state.nowPlaying = movies;
@@ -35,27 +40,30 @@ const moviesStore = {
     saveMovie(context, payload) {
       context.commit('setLocalMovies', payload);
     },
-    getNowPlaying(context, payload) {
+    getLocalMovies(context) {
+      context.commit('setLocalMovies');
+    },
+    getNowPlaying(context) {
       return MoviesService.getNowPlaying()
         .then(movies => {
           context.commit('setNowPlaying', movies.results);
           return movies.results;
         });
     },
-    getUpcoming(context, payload) {
+    getUpcoming(context) {
       return MoviesService.getUpcoming().then(movies => {
         context.commit('setUpcoming', movies.results);
         return movies.results;
       });
     },
-    getTopRated(context, payload) {
+    getTopRated(context) {
       return MoviesService.getTopRated()
         .then(movies => {
           context.commit('setTopRated', movies.results);
           return movies.results;
         });
     },
-    getPopular(context, payload) {
+    getPopular(context) {
       return MoviesService.getPopular()
         .then(movies => {
           context.commit('setPopular', movies.results);
