@@ -14,10 +14,10 @@ export default {
     LfLayout
   },
   mounted() {
-    this.getNowPlaying()
-    this.getUpcoming()
-    this.getTopRated()
-    this.getPopular()
+   this.getNowPlaying()
+   this.getUpcoming()
+   this.getTopRated()
+   this.getPopular()
   },
   methods: {
     ...mapActions(["getNowPlaying", "getUpcoming", "getTopRated", "getPopular"])
