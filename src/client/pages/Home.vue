@@ -1,11 +1,11 @@
 <template>
-  <v-layout row wrap justify-center class="white--text">
-    <lf-recomended-movie :movie="recomendedMovie"></lf-recomended-movie>
-    <div v-if="nowPlaying.length !== 0" class="upcomming">
+  <v-layout row wrap align-center justify-center class="white--text">
+    <lf-recomended-movie v-if="nowPlaying.length !== 0" :movie="recomendedMovie"></lf-recomended-movie>
+    <div v-if="upcoming.length !== 0" class="upcomming">
       <h2>Próximamente</h2>
       <lf-carousel-movies :movies="upcoming"></lf-carousel-movies>
     </div>
-    <div v-if="topRated.length !==0 " class="top-rated">
+    <div v-if="topRated.length !== 0" class="top-rated">
       <h2>Mejores ranqueadas</h2>
       <lf-carousel-movies :movies="topRated"></lf-carousel-movies>
     </div>
@@ -39,9 +39,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .upcomming {
-    position: relative;
-    transform: translatey(-50%);
-  }
+.upcomming {
+  position: relative;
+  transform: translatey(-50%);
+}
 </style>
 
