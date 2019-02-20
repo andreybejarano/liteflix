@@ -24,6 +24,7 @@
     "morgan": "^1.9.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
+    "vee-validate": "^2.1.7",
     "vue": "^2.6.6",
     "vue-router": "^3.0.2",
     "vue-server-renderer": "^2.6.3",
