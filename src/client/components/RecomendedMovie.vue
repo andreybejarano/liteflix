@@ -24,8 +24,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1 {
+  font-size: 7rem;
+}
+@media screen and (max-width: 360px) {
   h1 {
-    font-size: 100px;
+    font-size: 3rem;
+    font-weight: 900;
   }
+  .v-image {
+    height: 440px;
+  }
+}
 </style>
 
