@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid">
     <lf-header></lf-header>
+    <lf-drawer></lf-drawer>
     <router-view/>
     <lf-footer></lf-footer>
   </div>
@@ -8,11 +9,13 @@
 
 <script>
 import LfHeader from "@/layout/components/Header.vue";
+import LfDrawer from "@/layout/components/Drawer.vue";
 import LfFooter from "@/layout/components/Footer.vue";
 
 export default {
   components: {
     LfHeader,
+    LfDrawer,
     LfFooter
   }
 };

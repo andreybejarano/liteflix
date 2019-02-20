@@ -40,8 +40,10 @@ export default {
 
 <style lang="scss" scoped>
 .upcomming {
-  position: relative;
-  transform: translatey(-50%);
+  @media screen and (min-width: 361px) {
+    position: relative;
+    transform: translatey(-50%);
+  }
 }
 </style>
 

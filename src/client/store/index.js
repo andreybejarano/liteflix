@@ -1,14 +1,16 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import MoviesStore from './movies';
+import moviesStore from './movies';
+import drawerStore from './drawer';
 
 Vue.use(Vuex);
 
 export function createStore() {
   return new Vuex.Store({
     modules: {
-      movies: MoviesStore
+      movies: moviesStore,
+      drawer: drawerStore
     }
   });
 }
