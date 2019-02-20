@@ -27,18 +27,20 @@ export default {
       this.getUpcoming(),
       this.getTopRated(),
       this.getPopular(),
-      this.getLocalMovies()
     ]).then(() => {
-      this.loading = false;
+      this.getLocalMovies()
+      this.mergeLocalMovies()
+      this.loading = false
     });
   },
   methods: {
     ...mapActions([
-      "getLocalMovies",
       "getNowPlaying",
       "getUpcoming",
       "getTopRated",
-      "getPopular"
+      "getPopular",
+      "getLocalMovies",
+      "mergeLocalMovies"
     ])
   }
 };

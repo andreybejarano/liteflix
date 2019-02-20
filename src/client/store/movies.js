@@ -19,9 +19,15 @@ const moviesStore = {
       let localMovies = JSON.parse(localStorage.getItem('localMovies')) || { results: [] };
       if (movie) {
         localMovies.results.push(movie);
+        localStorage.setItem('localMovies', JSON.stringify(localMovies));
+        state[movie.type].unshift(movie);
       }
-      localStorage.setItem('localMovies', JSON.stringify(localMovies));
       state.localMovies = localMovies.results;
+    },
+    mergeLocalMovies(state) {
+      state.localMovies.forEach(element => {
+        state[element.type].unshift(element);
+      });
     },
     setNowPlaying(state, movies) {
       state.nowPlaying = movies;
@@ -42,6 +48,9 @@ const moviesStore = {
     },
     getLocalMovies(context) {
       context.commit('setLocalMovies');
+    },
+    mergeLocalMovies(context) {
+      context.commit('mergeLocalMovies');
     },
     getNowPlaying(context) {
       return MoviesService.getNowPlaying()
