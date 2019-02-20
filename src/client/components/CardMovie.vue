@@ -13,7 +13,10 @@ export default {
   },
   methods: {
     getUrlImg() {
-      return `${config.urlAssets}/w500${this.movie.backdrop_path}`;
+      const url = this.movie.type
+                    ? this.movie.backdrop_path
+                    : `${config.urlAssets}/w500${this.movie.backdrop_path}`
+      return url
     }
   }
 }
